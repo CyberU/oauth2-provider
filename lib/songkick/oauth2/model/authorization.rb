@@ -97,7 +97,7 @@ module Songkick
         end
 
         def expire!
-          self.expires_at = 0
+          self.expires_at = Time.now - 1
           save!
         end
 
