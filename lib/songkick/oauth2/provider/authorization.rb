@@ -28,14 +28,6 @@ module Songkick
           return unless @model and @model.in_scope?(scopes) and not @model.expired?
 
           @authorized = true
-
-          if @params[RESPONSE_TYPE] =~ /code/
-            @code = @model.generate_code
-          end
-
-          if @params[RESPONSE_TYPE] =~ /token/
-            @access_token = @model.generate_access_token
-          end
         end
 
         def scopes
